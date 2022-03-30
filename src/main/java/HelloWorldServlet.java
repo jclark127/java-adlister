@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello-world/*")
+@WebServlet(name = "HelloWorldServlet", urlPatterns = "/hello/*")
 public class HelloWorldServlet extends HttpServlet {
     public int counter = 1;
 
@@ -23,9 +23,11 @@ public class HelloWorldServlet extends HttpServlet {
         } else {
             out.println("<h1>Hello, " + name + "</h1>");
         }
-        out.println("<h1>Page views: " + counter + "</h1>");
+
         if (reset.equalsIgnoreCase("reset")){
             counter = 0;
         }
-        }
+        if(request.getParameter("count").equalsIgnoreCase("count"))
+        out.println("<h1>Page views: " + counter + "</h1>");
+    }
 }
