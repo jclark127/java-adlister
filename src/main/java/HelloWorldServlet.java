@@ -31,3 +31,6 @@ public class HelloWorldServlet extends HttpServlet {
         out.println("<h1>Page views: " + counter + "</h1>");
     }
 }
+
+///getting green squares
+
